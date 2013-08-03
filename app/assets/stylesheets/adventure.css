@@ -1,0 +1,14 @@
+#header {
+  background-color: blue;
+  height: 30px;
+}
+
+.frist_letter {
+  font-size: 30px;
+  font-family: Old English Text MT;
+  margin-left: 40px;
+}
+
+.main {
+  line-height: 2.0;
+}
