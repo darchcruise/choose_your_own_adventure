@@ -3,8 +3,8 @@ class CreateAdventures < ActiveRecord::Migration
   create_table :adventures do |t|
       t.integer :users_id
       t.string :story
-      t.string :photo what datatype???
-      t.string :questions
+      t.string :question_1
+      t.string :question_2
 
     t.timestamps
     end
