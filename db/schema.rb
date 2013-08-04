@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(:version => 20130803195325) do
     t.string   "story"
     t.string   "question_1"
     t.string   "question_2"
+    t.float    "id_of_story"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
     t.string   "photo_file_name"
