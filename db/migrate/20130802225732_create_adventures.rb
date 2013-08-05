@@ -8,9 +8,7 @@ class CreateAdventures < ActiveRecord::Migration
       t.float :id_of_story
       t.string :outcome
 
-
     t.timestamps
-    end
   end
 
   def down
