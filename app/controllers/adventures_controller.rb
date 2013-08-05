@@ -1,5 +1,4 @@
 class AdventuresController < ApplicationController
-
   def home
   end
 
@@ -15,5 +14,4 @@ class AdventuresController < ApplicationController
       render action: "new"
     end
   end
-
 end
