@@ -6,6 +6,7 @@ class CreateAdventures < ActiveRecord::Migration
       t.string :question_1
       t.string :question_2
       t.float :id_of_story
+      t.string :outcome
 
 
     t.timestamps
