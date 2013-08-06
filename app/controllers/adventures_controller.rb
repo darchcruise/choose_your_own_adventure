@@ -23,7 +23,7 @@ class AdventuresController < ApplicationController
 
   def ajaxfunction
     #when push button is pressed refresh with story_id from db
-    # write function in ruby, hence no javascript ot ajax syntax used here.
+    # write function in ruby, hence no javascript or ajax syntax used here.
     @adventure = Adventure.find_by_id_of_story(0.0)
   end
 
