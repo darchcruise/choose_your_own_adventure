@@ -2,9 +2,7 @@
 
 <div class="main">
 
-<%= @adventure[0].story %>
-
-<p><span class="frist_letter">N</span><%= @adventure[0].story %></p>
+<p><span class="frist_letter"><%= @adventure[0].story.first %></span><%= @adventure[0].story[1..-1] %></p>
 
 <img src="/assets/2013-04-10-labyrinth.gif">
 
