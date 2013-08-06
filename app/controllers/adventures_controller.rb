@@ -1,5 +1,6 @@
 class AdventuresController < ApplicationController
   def game
+    @adventure = Adventure.all
   end
 
   def new
@@ -11,10 +12,13 @@ class AdventuresController < ApplicationController
   end
 
   def edit
-    @adventure = Adventure.find(params[:id])    #info in object gets overwritten by new info entered into the form. Info from form edits previous info stored in this adventure object
+    @adventure = Adventure.find(params[:id])    # find row of table by :id and stores it in the object.
   end
 
   def update
+    @adventure =Adventure.find(params[:id])
+    @adventure.update_attributes(params[:adventure])
+    redirect_to root_path
   end
 
 
