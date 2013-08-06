@@ -1,6 +1,6 @@
 ChooseYourOwnAdventure::Application.routes.draw do
 
-   root to: 'adventures#home'
+   root to: 'adventures#game'
   resources :adventures
 #           root        /                              adventures#home
 #     adventures GET    /adventures(.:format)          adventures#index
