@@ -4,7 +4,7 @@
 
 <p><span class="frist_letter"><%= @adventure[0].story.first %></span><%= @adventure[0].story[1..-1] %></p>
 
-<img src="/assets/2013-04-10-labyrinth.gif">
+<%= image_tag @adventure[0].photo %>  <!--image_tag does the same thing as img src in html, except it is in ruby-->
 
 <form>
   <input type="radio" name="decision" value="labryinth" id="labryinth">Do you enter the labryinth?<br/>
