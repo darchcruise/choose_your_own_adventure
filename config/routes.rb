@@ -2,7 +2,7 @@ ChooseYourOwnAdventure::Application.routes.draw do
 
    root to: 'adventures#game'
    resources :adventures
-# root        /                              adventures#game
+#           root        /                              adventures#game
 #     adventures GET    /adventures(.:format)          adventures#index
 #                POST   /adventures(.:format)          adventures#create
 #  new_adventure GET    /adventures/new(.:format)      adventures#new
