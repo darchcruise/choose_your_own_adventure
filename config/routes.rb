@@ -2,6 +2,7 @@ ChooseYourOwnAdventure::Application.routes.draw do
 
    root to: 'adventures#game'
    resources :adventures
+   match 'ajax' =>'adventures#ajaxfunction'       #goes to ajax.js.erb
 #           root        /                              adventures#game
 #     adventures GET    /adventures(.:format)          adventures#index
 #                POST   /adventures(.:format)          adventures#create

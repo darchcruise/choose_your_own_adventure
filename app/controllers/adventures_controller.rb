@@ -21,7 +21,7 @@ class AdventuresController < ApplicationController
     redirect_to root_path
   end
 
-  def ajaxfunction
+  def ajaxfunction  # this is the url for ajax to access the db.
     #when push button is pressed refresh with story_id from db
     # write function in ruby, hence no javascript or ajax syntax used here.
     @adventure = Adventure.find_by_id_of_story(0.0)

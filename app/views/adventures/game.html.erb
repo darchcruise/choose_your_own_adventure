@@ -6,13 +6,21 @@
 
 <%= image_tag @adventure[0].photo %>  <!--image_tag does the same thing as img src in html, except it is in ruby-->
 
-<form>
-  <input type="radio" name="decision" value="1" id="q1"><%= @adventure[0].question_1 %><br/>
-  <input type="radio" name="decision" value="2"id="q2"><%= @adventure[0].question_2 %><br/>
+<br/>
+
+
+  <% if @adventure[0].question_1.present? %>
+    <input type="radio" name="decision" value="1" id="q1"><%= @adventure[0].question_1 %> <br/> <!-- Make value dynamic, when no question, don't show radio button-->
+  <% end %>
+
+  <% if @adventure[0].question_2.present? %>
+    <input type="radio" name="decision" value="2" id="q2"><%= @adventure[0].question_2 %><br/>
+    <!--if not present it has no radio buttons to print-->
+  <% end %>
 
   <button id="continue_button">Continue</button> <!--jquery script.js.file uses continue_button id to refresh page-->
 
-</form>
+
 </div>
 
 <script type="text/javascript" src="script.js"></script>
