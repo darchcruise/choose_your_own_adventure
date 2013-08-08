@@ -8,15 +8,26 @@
 
 <br/>
 
-
+<!--condition one-->
   <% if @adventure[0].question_1.present? %>
-    <input type="radio" name="decision" value="1" id="q1"><%= @adventure[0].question_1 %> <br/> <!-- Make value dynamic, when no question, don't show radio button-->
+    <input type="radio" name="decision" value="1" id="q1"><%= @adventure[0].question_1 %> <br/> <!--if not present it has no radio buttons to print. Also I need to make value dynamic. if we are on id_story =1, + 0.1-->
   <% end %>
 
   <% if @adventure[0].question_2.present? %>
     <input type="radio" name="decision" value="2" id="q2"><%= @adventure[0].question_2 %><br/>
-    <!--if not present it has no radio buttons to print-->
+    <!--if not present it has no radio buttons to print. if we are on id_story =1, + 0.2-->-->
   <% end %>
+
+<!--condition two-->
+<!-- if id_story == 0.1, value 1, value 2 -->
+<% if @adventure[0].id_of_story == 0.1 %>
+    <input type="radio" name="decision" value="1" id="q1"><%= @adventure[0].question_1 %> <br/>
+       <input type="radio" name="decision" value="2" id="q2"><%= @adventure[0].question_2 %><br/>
+
+<% end %>
+
+<!--condition three-->
+if value 1 or value 2, 1.1 and 1.2  or  2.1 and 2.2
 
   <button id="continue_button">Continue</button> <!--jquery script.js.file uses continue_button id to refresh page-->
 
