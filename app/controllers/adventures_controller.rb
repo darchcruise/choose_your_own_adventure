@@ -24,7 +24,11 @@ class AdventuresController < ApplicationController
   def ajaxfunction  # this is the url for ajax to access the db.
     #when push button is pressed refresh with story_id from db
     # write function in ruby, hence no javascript or ajax syntax used here.
-    @adventure = Adventure.find_by_id_of_story(0.0)
+    if params[:decision_value] == "undefined"
+      @adventure = Adventure.find(2)
+    else
+      @adventure = Adventure.find_by_id_of_story(params[:decision_value])
+    end
   end
 
 

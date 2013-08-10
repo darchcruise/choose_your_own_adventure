@@ -1,3 +1,39 @@
 //This page will give the results of ajax response. Thus, renders new story, photo, and questions.
 // Aka is displays the next row of adventure table when continue button is pressed
 
+//copy and paste body of html and edit it here.
+
+
+<% if @adventure.id == 2 %> //because we use @adventure = Adventure.find_by_id_of_story(?), it knows which column, therfore we only need the id of row.
+         var left_btn = '<input type="radio" name="decision" value="1" id="q1">' //elimated question statement, bc we will write in line 44
+         var right_btn = '<input type="radio" name="decision" value="2" id="q2">'
+
+      <% else %>
+
+          <% x = @adventure.id_of_story %> <!-- id_of_story column -->
+          <% if x == 1 || x == 2 %>  <!-- if column equal 1 or 2 (ie adventure_id 3), make the buttons..-->
+            <% leftbutton = x.to_f.to_s.succ %> <!-- 1.1 or 2.1-->
+            <% rightbutton = leftbutton.succ %> <!-- 1.2 or 2.1. leftbutton is already float and string, therefore we just apply succ (1.1 + 0.1)-->
+          <% else %> <!-- if x != 1 || x != 2 , (ie adventure_id 5 which yields x = 1.1)-->
+            <% treelevel = x.to_s.split(".").last.size %> <!-- it finds current level-->
+            <% level = treelevel + 1 %>
+            <% growthfactor = 1/10.to_f ** level %> <!-- ie 0.01-->
+            <% leftbutton = x + growthfactor %> <!-- leftbutton (ie 1.11) -->
+            <% rightbutton = leftbutton %> <!-- leftbutton (ie 1.11) -->
+          <% end %>
+        <% if @adventure.question_1.present? && @adventure.question_2.present? %>
+            var left_btn = '<input type="radio" name="decision" value=<%= leftbutton %> id="q1">'
+            var right_btn = '<input type="radio" name="decision" value=<%= rightbutton %> id="q2">'
+        <% else %>
+            var left_btn = ''
+            var right_btn = ''
+        <% end %>
+     <% end %>
+
+$('.main').html(right_btn);
+var story_photo_questions ='<p><span class="frist_letter"><%= escape_javascript(@adventure.story.first)%></span><%= escape_javascript(@adventure.story[1..-1]) %></p><%= escape_javascript(image_tag @adventure.photo) %></br>'+left_btn+'<%= escape_javascript(@adventure.question_1)%><br/>'+right_btn+'<%= escape_javascript(@adventure.question_2) %><br/><%= escape_javascript(@adventure.outcome) %>';
+
+  $('.main').html(story_photo_questions);
+
+
+
