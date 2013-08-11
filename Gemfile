@@ -5,6 +5,8 @@ source 'https://rubygems.org'
 	gem 'paperclip'
 	gem 'bcrypt-ruby', require: 'bcrypt'
 
+  gem "rspec-rails", :group => [:test, :development]
+
 group :assets do
 	gem 'sass-rails',   '~> 3.2.3'
 	gem 'coffee-rails', '~> 3.2.1'

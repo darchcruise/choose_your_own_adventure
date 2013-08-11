@@ -3,6 +3,9 @@ class AdventuresController < ApplicationController
     @adventure = Adventure.all
   end
 
+  def game_start
+  end
+
   def new
     @adventure = Adventure.new    #create object to be used in form. Info from form is stored in this adventure object.
   end

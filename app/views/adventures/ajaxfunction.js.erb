@@ -3,7 +3,10 @@
 
 //copy and paste body of html and edit it here.
 
-
+<% if@adventure.outcome.present? %>
+  $("#continue_button").hide();
+  $("#reset_button").show();
+<% end %>
 <% if @adventure.id == 2 %> //because we use @adventure = Adventure.find_by_id_of_story(?), it knows which column, therfore we only need the id of row.
          var left_btn = '<input type="radio" name="decision" value="1" id="q1">' //elimated question statement, bc we will write in line 44
          var right_btn = '<input type="radio" name="decision" value="2" id="q2">'
