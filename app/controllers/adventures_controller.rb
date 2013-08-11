@@ -12,6 +12,11 @@ class AdventuresController < ApplicationController
 
   def create
     @adventure = Adventure.new(params[:adventure])   # adventure object returns the info from form
+    if @adventure.save
+      redirect_to new_adventure_path, notice: 'Adventure was successfully created.'
+    else
+      render action: "new"
+    end
   end
 
   def edit
