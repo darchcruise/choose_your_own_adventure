@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(:version => 20130803195325) do
 
   create_table "adventures", :force => true do |t|
     t.integer  "users_id"
-    t.string   "story"
+    t.text   "story"
     t.string   "question_1"
     t.string   "question_2"
     t.float    "id_of_story"
