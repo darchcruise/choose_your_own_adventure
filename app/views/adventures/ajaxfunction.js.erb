@@ -22,7 +22,8 @@
             <% level = treelevel + 1 %>
             <% growthfactor = 1/10.to_f ** level %> <!-- ie 0.01-->
             <% leftbutton = x + growthfactor %> <!-- leftbutton (ie 1.11) -->
-            <% rightbutton = leftbutton %> <!-- leftbutton (ie 1.11) -->
+            <% rightbutton = leftbutton + growthfactor %> <!-- leftbutton (ie 1.11) -->
+            <% rightbutton = rightbutton.round(level) %>
           <% end %>
         <% if @adventure.question_1.present? && @adventure.question_2.present? %>
             var left_btn = '<input type="radio" name="decision" value=<%= leftbutton %> id="q1">'
